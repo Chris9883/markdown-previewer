@@ -6,15 +6,18 @@ function App() {
   const inlineCode ="`<div>Hello World!</div>`";
   const backticks ="```"
   const defaultText = `# Welcome to my Markdown Previewer!
-  Type some text to see the output on the right and style it with markdown -
+
+  Type some text in the editor to see it converted into HTML and style it with markdown -
   You can make your text **bold**, *italics*, or ***both***. 
-  ~~Crossing stuff out~~ or adding code ${inlineCode} is another fun thing to do.
+
+  ~~Crossing things out~~ or adding code ${inlineCode} is another fun thing to do.
   You can even add whole code blocks:
   ${backticks} 
   function sayHello(name) = {
     console.log("Hello", name);
   } 
   ${backticks}
+
   ## How to add lists
   It's easy! 
   1. You type a number followed by a dot
@@ -27,9 +30,7 @@ function App() {
        - bananas and
       - bread.
 
-> This previewer was built by [@Chris9883](github.com/chris9883) as part of a [freecodecamp](freecodecamp.org) project. 
-
-![freecodecamp logo](https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/FreeCodeCamp_logo.png/800px-FreeCodeCamp_logo.png)`
+> This previewer was built by [@Chris9883](github.com/chris9883) as part of a [freecodecamp](freecodecamp.org) project. `
 
 
   const [input, setInput] = useState(defaultText);
@@ -45,20 +46,19 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App bg-white">
      
       <nav className="navbar navbar-light bg-dark text-light d-flex justify-content-center align-items-center">
-        <a className="navbar-brand text-light" href="/">Markdown Previewer</a>
-    
+        <a className="navbar-brand text-light" href="/"><h1>Markdown Previewer</h1></a>
       </nav>
       <main>
         <div className="container-fluid">
           <div className="row mt-5">
-            <div className="col-sm-12 col-md-6 text-center mt-5">
-              <textarea id="editor" className="col-10" rows="20" onChange={resolve} value={input}></textarea>
+            <div className="col-sm-12 col-md-6 text-center mt-md-5 mt-sm-4">
+              <textarea id="editor" className="col-10 p-md-4 p-sm-2" rows="20" onChange={resolve} value={input}></textarea>
             </div>
-            <div className="col-sm-12 col-md-6">
-              <div id="preview" className="col-10" dangerouslySetInnerHTML={{__html: marked(input)}}></div>
+            <div className="col-sm-12 col-md-6 mt-5">
+              <div id="preview" className="col-11 p-sm-2 bg-white" dangerouslySetInnerHTML={{__html: marked(input)}}></div>
             </div>
           </div>
         </div>
