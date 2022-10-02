@@ -1,0 +1,18 @@
+* {
+    font-size: 0.75rem;
+}
+
+blockquote {
+    background-color: lightblue;
+    padding-inline: 10px;
+    text-align: center;
+}
+
+pre {
+    padding: 5px 20px;
+    background-color: lightgray;
+}
+img {
+    max-width: 40vw;
+    height: auto;
+}
